@@ -6324,6 +6324,11 @@
     "setimmediate" "^1.0.5"
     "string-hash-64" "^1.0.3"
 
+"react-native-responsive-dimensions@^3.1.1":
+  "integrity" "sha512-Vo2OhWsphq0HgKsmeZOeyW+c+vsFn1ZaCFkGDgdeCEEiLriT76jGA1JlUjtrj27hvyo/xzeTlBZ+vBso1A84fw=="
+  "resolved" "https://registry.npmjs.org/react-native-responsive-dimensions/-/react-native-responsive-dimensions-3.1.1.tgz"
+  "version" "3.1.1"
+
 "react-native-safe-area-context@^4.4.1":
   "integrity" "sha512-N9XTjiuD73ZpVlejHrUWIFZc+6Z14co1K/p1IFMkImU7+avD69F3y+lhkqA2hN/+vljdZrBSiOwXPkuo43nFQA=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.4.1.tgz"
