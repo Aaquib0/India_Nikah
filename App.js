@@ -1,86 +1,64 @@
-import {
-  View,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TextInput,
-} from 'react-native';
-import react, {useState} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import Entypo from 'react-native-vector-icons/Entypo';
 
 export default function App() {
-  const [text, setText] = useState('');
-  const [savedtext, setSavedText] = useState('');
-
-  const storeData = async () => {
-    try {
-      await AsyncStorage.setItem('TEXT', text);
-    } catch (e) {
-      // saving error
-    }
-  };
-  const getData = async () => {
-    try {
-      const value = await AsyncStorage.getItem('TEXT');
-      if (value !== null) {
-        setSavedText(value);
-        // value previously stored
-      }
-    } catch (e) {
-      // error reading value
-    }
-  };
-
   return (
     <View
       style={{
         flex: 1,
+        backgroundColor: 'green',
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-      <TextInput
-        onChangeText={txt => setText(txt)}
+      <View style={{alignSelf:'center',backgroundColor:'red'}}>
+      <View>
+        <TouchableOpacity
+          style={{
+            width: 50,
+            height: 70,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <View
+            style={{
+              height: 60,
+              width: 60,
+              backgroundColor: 'pink',
+              borderRadius: 30,
+            }}>
+            <Entypo name="plus" size={60} color="black" />
+          </View>
+        </TouchableOpacity>
+      </View>
+      </View>
+      <View
         style={{
-          width: '80%',
-          height: 70,
-          backgroundColor: 'green',
-          borderRadius: 13,
-          paddingHorizontal: 20,
-        }}
-      />
-      <TouchableOpacity
-        onPress={() => {
-          storeData();
-        }}
-        style={{
-          width: 200,
-          height: 70,
-          backgroundColor: '#000',
-          justifyContent: 'center',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
           alignItems: 'center',
-          borderRadius: 10,
-          marginTop: 30,
+          backgroundColor: '#fff',
+          height: 100,
+          width: '100%',
+          // position:'absolute',
+          // bottom:0
         }}>
-        <Text style={{color: '#fff'}}>Save Data</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          getData();
-        }}
-        style={{
-          width: 200,
-          height: 70,
-          backgroundColor: '#000',
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 10,
-          marginTop: 50,
-        }}>
-        <Text style={{color: '#fff'}}>Display Value</Text>
-      </TouchableOpacity>
-      <Text style={{marginTop: 20}}>{'Save Text :' + savedtext}</Text>
+        <TouchableOpacity style={{alignItems: 'center'}}>
+          <Image
+            source={require('./SRC/Images/Splash.jpg')}
+            style={{height: 60, width: 60}}
+          />
+          <Text style={{color: '#000'}}>Splash</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            source={require('./SRC/Images/Light.jpg')}
+            style={{height: 60, width: 60}}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
 
-const style = StyleSheet.create({});
+const styles = StyleSheet.create({});
